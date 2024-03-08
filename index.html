@@ -49,9 +49,20 @@
   <a href="https://www.doctorwho.tv/">#BBC神秘博士</a>
 </div>
 
-<div style="padding:15px 15px 2500px;font-size:30px;margin-top:30px;">
-  <iframe src="https://raw.githubusercontent.com/melonTMD/DoctorWho/doctorwho/text.txt" width="100%" height="600px" frameborder="0"></iframe>
-</div>
+<body>
+  <pre id="file-content"></pre>
 
+  <script>
+    // 使用JavaScript读取文本文件内容并显示在页面上
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://raw.githubusercontent.com/melonTMD/DoctorWho/doctorwho/text.txt', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        document.getElementById('file-content').innerText = xhr.responseText;
+      }
+    };
+    xhr.send();
+  </script>
 </body>
+
 </html>
