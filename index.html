@@ -38,27 +38,6 @@
       max-width: 150px;
     }
 
-    /* 添加箭头按钮样式 */
-    .arrow {
-      float: left;
-      display: block;
-      padding: 20px 10px;
-      cursor: pointer;
-    }
-
-    /* 箭头图标样式 */
-    .arrow::after {
-      content: '\25BC'; /* Unicode箭头向下图标 */
-      font-size: 20px;
-      display: inline-block;
-      transition: transform 0.3s ease; /* 添加过渡效果 */
-    }
-
-    /* 旋转箭头图标以表示展开和收回状态 */
-    .rotate {
-      transform: rotate(180deg); /* 旋转180度，箭头向上 */
-    }
-
     /* 调整文本文件内容的字体大小 */
     #file-content {
       font-size: 16px; /* 设置字体大小为16像素 */
@@ -90,11 +69,6 @@
   };
   xhr.send();
 
-  // 切换箭头按钮样式以表示展开和收回状态
-  function toggleArrow() {
-    var arrow = document.querySelector('.arrow');
-    arrow.classList.toggle('rotate'); // 切换旋转类名以旋转箭头图标
-  }
 </script>
 
 </body>
