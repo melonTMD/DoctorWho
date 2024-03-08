@@ -38,31 +38,64 @@
       max-width: 150px;
     }
 
+    /* 添加箭头按钮样式 */
+    .arrow {
+      float: left;
+      display: block;
+      padding: 20px 10px;
+      cursor: pointer;
+    }
+
+    /* 箭头图标样式 */
+    .arrow::after {
+      content: '\25BC'; /* Unicode箭头向下图标 */
+      font-size: 20px;
+      display: inline-block;
+      transition: transform 0.3s ease; /* 添加过渡效果 */
+    }
+
+    /* 旋转箭头图标以表示展开和收回状态 */
+    .rotate {
+      transform: rotate(180deg); /* 旋转180度，箭头向上 */
+    }
+
+    /* 调整文本文件内容的字体大小 */
+    #file-content {
+      font-size: 16px; /* 设置字体大小为16像素 */
+    }
+
   </style>
 </head>
 <body>
 
 <div class="navbar">
-  <a href="#doctorwhologo"><img src="https://www.doctorwho.tv/images/doctorwho-logo-2022.png" alt="Doctor Who Logo"></a>
+  <a href="#doctorwhologo" class="arrow" onclick="toggleArrow()"> <!-- 添加箭头按钮 -->
+    <img src="https://www.doctorwho.tv/images/doctorwho-logo-2022.png" alt="Doctor Who Logo">
+  </a>
   <a href="https://doctorwho.doctor/">#神秘博士资源网</a>
   <a href="https://doctorwho.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5">#神秘博士WIKI</a>
   <a href="https://www.doctorwho.tv/">#BBC神秘博士</a>
 </div>
 
-<body>
-  <pre id="file-content"></pre>
+<pre id="file-content"></pre>
 
-  <script>
-    // 使用JavaScript读取文本文件内容并显示在页面上
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://raw.githubusercontent.com/melonTMD/DoctorWho/doctorwho/text.txt', true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        document.getElementById('file-content').innerText = xhr.responseText;
-      }
-    };
-    xhr.send();
-  </script>
+<script>
+  // 使用JavaScript读取文本文件内容并显示在页面上
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://raw.githubusercontent.com/melonTMD/DoctorWho/doctorwho/text.txt', true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      document.getElementById('file-content').innerText = xhr.responseText;
+    }
+  };
+  xhr.send();
+
+  // 切换箭头按钮样式以表示展开和收回状态
+  function toggleArrow() {
+    var arrow = document.querySelector('.arrow');
+    arrow.classList.toggle('rotate'); // 切换旋转类名以旋转箭头图标
+  }
+</script>
+
 </body>
-
 </html>
