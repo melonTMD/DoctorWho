@@ -62,6 +62,12 @@
       }
     };
     xhr.send();
+
+      // 切换箭头按钮样式以表示展开和收回状态
+  function toggleArrow() {
+    var arrow = document.querySelector('.arrow');
+    arrow.classList.toggle('rotate'); // 切换旋转类名以旋转箭头图标
+  }
   </script>
 </body>
 
