@@ -37,8 +37,7 @@
       max-height: 50px;
       max-width: 150px;
     }
-    
-    <div id="content">
+
   </style>
 </head>
 <body>
@@ -53,19 +52,6 @@
 <div style="padding:15px 15px 2500px;font-size:30px;margin-top:30px;">
   <p>https://github.com/melonTMD/DoctorWho/blob/doctorwho/text.txt</p>
 </div>
-
-<script>
-  // 异步加载文本文件
-  fetch('https://github.com/melonTMD/DoctorWho/blob/doctorwho/text.txt')
-    .then(response => response.text())
-    .then(text => {
-      // 将文本内容添加到页面中
-      document.getElementById('content').innerText = text;
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-</script>
-
+  <iframe src="https://github.com/melonTMD/DoctorWho/blob/doctorwho/text.txt" width="100%" height="500px" frameborder="0"></iframe>
 </body>
 </html>
