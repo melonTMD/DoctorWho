@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #263b5e; /* 更新背景颜色为 #263b5e */
+      background-color: #263b5e; /* 更改背景颜色为 #263b5e */
     }
 
     .navbar {
@@ -31,15 +31,6 @@
       transition: background-color 0.3s ease; /* 添加过渡效果 */
     }
 
-    .navbar a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-
     .navbar a:hover {
       background-color: #e5c076;
     }
@@ -49,18 +40,39 @@
       max-width: 150px;
     }
 
-    /* 调整文本文件内容的字体大小 */
+    /* 调整文件内容字体大小 */
     #file-content {
-      font-size: 16px; /* 设置字体大小为16像素 */
+      font-size: 16px;
       color: #f9f9f9;
     }
 
+    /* 图片容器样式 */
+    .image-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* 灰色框样式 */
+    .gray-box {
+      background-color: #183566; /* 灰色 */
+      padding: 20px;
+      width: 100%;
+      display: inline-block; /* 让它成为内联块以适应内容 */
+    }
+
+    /* 确保图片不超过容器宽度 */
+    .gray-box img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
 
 <div class="navbar">
-  <a href="#doctorwhologo" <img src="https://www.doctorwho.tv/images/doctorwho-logo-2022.png" alt="Doctor Who Logo"></a>
+  <a href="#doctorwhologo">
+    <img src="https://www.doctorwho.tv/images/doctorwho-logo-2022.png" alt="Doctor Who Logo">
+  </a>
   <a href="https://doctorwho.doctor/">#神秘博士资源网</a>
   <a href="https://doctorwho.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5">#神秘博士WIKI</a>
   <a href="https://www.doctorwho.tv/">#BBC神秘博士</a>
@@ -68,8 +80,14 @@
 
 <pre id="file-content"></pre>
 
+<div class="image-container">
+  <div class="gray-box">
+    <img src="AllDoctors.png" alt="Placeholder Image">
+  </div>
+</div>
+
 <script>
-  // 使用JavaScript读取文本文件内容并显示在页面上
+  // 使用JavaScript加载文件内容
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://raw.githubusercontent.com/melonTMD/DoctorWho/doctorwho/text.txt', true);
   xhr.onreadystatechange = function() {
@@ -78,7 +96,6 @@
     }
   };
   xhr.send();
-
 </script>
 
 <pre id="file-content"></pre>
